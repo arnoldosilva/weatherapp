@@ -1,10 +1,11 @@
 import React from 'react'
-import {Container, Temperature, Location, BgImage} from './components/StyledHomeComponents'
-import {Dimensions} from 'react-native'
+import {Container, BgImage} from './components/StyledHomeComponents'
 import TitleBar from './components/TitleBar'
 import StatusLocationBar from './components/StatusLocationBar'
+import Temperature from './components/Temperature'
+import Location from './components/Location'
+import GetLocation from '../../services/GetLocation'
 
-const height = Dimensions.get('window').height
 
 type Props = {}
 
@@ -14,10 +15,9 @@ const Home = (props: Props) => {
       <BgImage source={require('../../assets/cloudyday.jpg')}>
         <TitleBar name='Builder' title='Bem vindo' />
 
-        <Temperature>9º</Temperature>
-        <Location>São Paulo</Location>
-
-        <StatusLocationBar height={height} />
+        <Temperature temperature='23' />
+        <Location location='Fortaleza , CE' />
+        <StatusLocationBar />
       </BgImage>
     </Container>
   )

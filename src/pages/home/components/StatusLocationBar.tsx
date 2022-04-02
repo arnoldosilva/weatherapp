@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import {Font} from '../../../types/fonts'
+import {Dimensions} from 'react-native'
+const height = Dimensions.get('window').height
 
 interface iStatusLocationProps {
   height: number
@@ -32,9 +34,9 @@ const StatusLocationContainer = styled.View<iStatusLocationProps>`
 //   font-family: ${Font.bold};
 // `;
 
-export default function StatusLocationBar(props: iStatusLocationProps) {
+export default function StatusLocationBar() {
   return (
-    <StatusLocationContainer testID='StatusLocationBar' height={props.height}>
+    <StatusLocationContainer testID='StatusLocationBar' height={height}>
 
     </StatusLocationContainer>
   )
