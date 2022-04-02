@@ -34,7 +34,7 @@ const StatusLocationContainer = styled.View<iStatusLocationProps>`
 
 export default function StatusLocationBar(props: iStatusLocationProps) {
   return (
-    <StatusLocationContainer height={props.height}>
+    <StatusLocationContainer testID='StatusLocationBar' height={props.height}>
 
     </StatusLocationContainer>
   )
