@@ -8,7 +8,7 @@ interface ILocation {
   errorMsg: string;
 }
 
-export default async function GetLocation(): Promise<ILocation> {
+export default async function LocationService(): Promise<ILocation> {
 
   let errorMsg = ''
   let cordinates = {latitude: 0, longitude: 0}

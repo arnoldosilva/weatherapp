@@ -3,7 +3,7 @@ import {StatusBar} from 'expo-status-bar';
 import {SafeAreaView} from 'react-native';
 import Home from './src/pages/home/Home';
 import loadResourcesAndData from './src/hooks/LoadResources'
-import GetLocation from './src/services/GetLocation';
+import GetLocation from './src/services/LocationService';
 
 export default function App() {
   const [location, setLocation] = useState({})

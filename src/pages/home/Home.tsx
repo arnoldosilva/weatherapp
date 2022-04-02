@@ -4,7 +4,7 @@ import TitleBar from './components/TitleBar'
 import StatusLocationBar from './components/StatusLocationBar'
 import Temperature from './components/Temperature'
 import Location from './components/Location'
-import GetLocation from '../../services/GetLocation'
+import GetLocation from '../../services/LocationService'
 
 
 type Props = {}
