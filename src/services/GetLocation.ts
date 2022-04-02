@@ -1,4 +1,5 @@
 import * as Location from 'expo-location';
+
 interface ILocation {
   cordinates: {
     latitude: number;
@@ -25,7 +26,7 @@ export default async function GetLocation(): Promise<ILocation> {
       longitude: location?.coords.longitude ? location?.coords.longitude : 0
     };
   }
-  console.log({cordinates, errorMsg})
+
   return {cordinates, errorMsg};
 }
 
