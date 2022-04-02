@@ -1,12 +1,13 @@
 import LocationService from './LocationService'
 
-jest.mock('./GetLocation', () => jest.fn().mockReturnValue({
-  cordinates: {
-    latitude: 0,
-    longitude: 0
-  },
-  errorMsg: ''
-}
+jest.mock('./LocationService', () => jest.fn().mockReturnValue(
+  Promise.resolve({
+    cordinates: {
+      latitude: 0,
+      longitude: 0
+    },
+    errorMsg: ''
+  })
 ))
 
 type scope = 'fine' | 'coarse' | 'none';
