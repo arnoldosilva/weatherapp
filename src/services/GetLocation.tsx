@@ -1,41 +1,31 @@
-import {useState, useEffect} from 'react';
 import * as Location from 'expo-location';
-import {LocationObject} from 'expo-location';
-
 interface ILocation {
-  latitude: number;
-  longitude: number;
+  cordinates: {
+    latitude: number;
+    longitude: number;
+  }
+  errorMsg: string;
 }
 
-export default function GetLocation(): ILocation {
-  const [location, setLocation] = useState<LocationObject | null>(null);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+export default async function GetLocation(): Promise<ILocation> {
 
-  useEffect(() => {
-    (async () => {
-      let {status} = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        setErrorMsg('Permission to access location was denied');
-        return;
-      }
+  let errorMsg = ''
+  let cordinates = {latitude: 0, longitude: 0}
 
-      let location = await Location.getCurrentPositionAsync({});
-      setLocation(location);
-    })();
-  }, []);
-
-  let text = 'Waiting..';
-  if (errorMsg) {
-    text = errorMsg;
-  } else if (location) {
-    text = JSON.stringify(location);
+  let {status} = await Location.requestForegroundPermissionsAsync();
+  if (status !== 'granted') {
+    errorMsg = 'Permission to access location was denied';
+    return {cordinates, errorMsg}
   }
 
-  let position = {
-    latitude: location?.coords.latitude ? location?.coords.latitude : 0,
-    longitude: location?.coords.longitude ? location?.coords.longitude : 0
-  };
-
-  return position;
+  const location = await Location.getCurrentPositionAsync({});
+  if (location) {
+    cordinates = {
+      latitude: location?.coords.latitude ? location?.coords.latitude : 0,
+      longitude: location?.coords.longitude ? location?.coords.longitude : 0
+    };
+  }
+  console.log({cordinates, errorMsg})
+  return {cordinates, errorMsg};
 }
 
