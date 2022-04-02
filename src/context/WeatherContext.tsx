@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {cordinates} from '../types/Cordinates'
-// import GetLocation from '../services/LocationService';
+import GetLocation from '../services/LocationService';
+import {Alert} from 'react-native';
 
 export type WeatherContextType = {
   cordinates: cordinates;
@@ -19,20 +20,23 @@ export const WeatherContext = React.createContext<WeatherContextType>(DEFAULT_CO
 
 
 const WeatherAppProvider: React.FC = ({children}) => {
-  const [cordinates, setCordinates] = React.useState(DEFAULT_CONTEXT.cordinates)
+  const [cordinates, setCordinates] = useState(DEFAULT_CONTEXT.cordinates)
   const setLocation = (currentLocation: cordinates) => setCordinates(currentLocation)
 
-  // const [location, setLocation] = useState({})
+  useEffect(() => {
+    async function postInit() {
+      let currentLocation = await GetLocation();
 
-  // useEffect(() => {
-  //   async function postInit() {
-  //     let currentLocation = await GetLocation();
-  //     console.log(currentLocation)
-  //     setLocation(currentLocation)
-  //   }
-  //   postInit();
+      if (currentLocation.errorMsg) {
+        Alert.alert('Error to get current location', currentLocation.errorMsg)
+      } else {
+        setLocation(currentLocation.cordinates)
+      }
 
-  // }, []);
+    }
+    postInit();
+
+  }, []);
 
 
   return (
