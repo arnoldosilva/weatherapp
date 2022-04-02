@@ -19,7 +19,9 @@ export default async function LocationService(): Promise<ILocation> {
     return {cordinates, errorMsg}
   }
 
-  const location = await Location.getCurrentPositionAsync({});
+  const location = await Location.getCurrentPositionAsync({
+    accuracy: Location.Accuracy.High
+  });
   if (location) {
     cordinates = {
       latitude: location?.coords.latitude ? location?.coords.latitude : 0,
