@@ -4,7 +4,7 @@ Este é um projeto teste para a Builders, com o objetivo de mostrar alguns conhe
 
 <img src="readmefiles/tela1.png" width="360">
 <!-- <img src="readmefiles/loading.png" width="360"> -->
-![tela2](readmefiles/loading.gif|width=350)
+![tela2](readmefiles/loading.gif)
 
 ## Possui interesse em desenvolver algum aplicativo mobile?
 
