@@ -3,6 +3,7 @@ import {Dimensions} from 'react-native'
 import styled from 'styled-components/native'
 import {Font} from '../../../types/fonts'
 
+
 const width = Dimensions.get('window').width
 
 interface iLocationProps {

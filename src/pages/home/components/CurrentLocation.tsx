@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import {Font} from '../../../types/fonts'
+import Icon from '@expo/vector-icons/SimpleLineIcons'
 
 
 interface iCurrentLocationProps {
@@ -8,14 +9,16 @@ interface iCurrentLocationProps {
 }
 
 const Container = styled.View`
-  margin:100px 30px 0 30px;
-  background-color: #fff;
+  margin:200px 30px 0 30px;
+  flex-direction: row;
+  justify-content: center;
 `
 
 const LocationText = styled.Text`
+  margin-left: 5px;
+  padding-top: 5px;
   font-size: 20px;
-  font-family: ${Font.medium};
-  color: #000;
+  font-family: ${Font.regular};
   text-align: center;
 `;
 
@@ -24,6 +27,7 @@ export default function CurrentLocation(props: iCurrentLocationProps) {
 
   return (
     <Container testID='CurrentLocation'>
+      <Icon name='location-pin' size={30} color='black' />
       <LocationText>{props.currentLocation}</LocationText>
     </Container>
   )

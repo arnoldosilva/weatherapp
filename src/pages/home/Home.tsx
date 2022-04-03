@@ -10,16 +10,16 @@ import {WeatherContext} from '../../context/WeatherContext'
 type Props = {}
 
 const Home = (props: Props) => {
-  const {cordinates} = useContext(WeatherContext)
-
+  const {cordinates, weather} = useContext(WeatherContext)
+  console.log(weather)
   return (
     <Container testID='Home'>
       <BgImage source={require('../../assets/cloudyday.jpg')}>
         <TitleBar name='Builder' title='Bem vindo' />
 
-        <Temperature temperature='23' />
-        <Location location='Fortaleza , CE' />
-        <CurrentLocation currentLocation={`${cordinates.latitude} ${cordinates.longitude}`} />
+        <Temperature temperature={`${weather.weather.main.temp}`} />
+        <Location location={`${weather.city}, ${weather.principalSubdivision}`} />
+        <CurrentLocation currentLocation={`${weather.locality}`} />
 
         <StatusLocationBar />
       </BgImage>

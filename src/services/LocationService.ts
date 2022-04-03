@@ -20,7 +20,7 @@ export default async function LocationService(): Promise<ILocation> {
   }
 
   const location = await Location.getCurrentPositionAsync({
-    accuracy: Location.Accuracy.High
+    accuracy: Location.Accuracy.High,
   });
   if (location) {
     cordinates = {

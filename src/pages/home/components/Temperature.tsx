@@ -7,24 +7,25 @@ interface iTemperatureProps {
 }
 
 const Container = styled.View`
+  justify-content: center;
   margin-left: 30px;
   margin-top: 50px;  
-  height: 150px;
+  height: 100px;
   border-radius: 10px;
-  width: 50%; 
+  width: 60%; 
   flex-direction: row;
   background-color: rgba(255, 255, 255, 0.1);
 `
 
 const TemperatureText = styled.Text`
   margin-left: 15px;
-  font-size: 120px;
-  font-family: ${Font.regular};
+  font-size: 80px;
+  font-family: ${Font.bold};
   color: #000
 `;
 
 const Formater = styled.Text`
-  font-size: 30px;
+  font-size: 20px;
   font-family: ${Font.medium};
   color: #000
 `;
