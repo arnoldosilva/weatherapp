@@ -31,9 +31,9 @@ Feito em React Native utilizando alguns pacotes e arquiteturas como:
 - Stylized Components
 - Jest + React Test Library
 
-## Começando
+### Começando
 
-Nesse projeto adicionei as apis para acesso ao openweather e reverse geolocalization mas pretendo invalida-las tão logo a análise, para interessados em estudar a arquiterura do projeto, um arquivo .env será adicionado.
+Nesse projeto adicionei as apis para acesso ao openweather e reverse geolocalization mas pretendo invalida-las tão logo a análise seja concluída. Para interessados em estudar a arquiterura do projeto, um arquivo .env será adicionado.
 
 ### Pré Requisitos
 
@@ -83,9 +83,11 @@ Os testes podem ser executados com o comando:
 
 ### Expo Go
 
-Você pode olhar o projeto no seu celular através do EXPO GO com o QR code abaixo ou pelo link
+Você pode olhar o projeto no seu celular através do EXPO GO com o QR code abaixo
 
 ![tela2](readmefiles/expo-go.png)
+
+Ou pelo celular clicando no link:
 
 ```sh
 exp://exp.host/@arnoldosilva/weatherapp?release-channel=default
