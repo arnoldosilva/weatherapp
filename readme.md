@@ -73,6 +73,13 @@ Basta executar os seguintes passos:
    ```js
    const API_KEY = 'ENTER YOUR API';
    ``` -->
+### Testes
+
+Os testes podem ser executados com o comando:
+
+  ```sh
+  yarn test
+  ```
 
 ## Suporte
 
