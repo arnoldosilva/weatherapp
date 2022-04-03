@@ -9,9 +9,13 @@ export type WeatherContextType = {
   cordinates: cordinates;
   setLocation: (currentLocation: cordinates) => void;
   weather: WeatherType;
+  isLoading: boolean;
+  setLoading: (loading: boolean) => void;
 }
 
 const DEFAULT_CONTEXT: WeatherContextType = {
+  isLoading: true,
+  setLoading: () => {},
   cordinates: {
     latitude: 0,
     longitude: 0
@@ -44,7 +48,8 @@ const WeatherAppProvider: React.FC = ({children}) => {
   const [cordinates, setCordinates] = useState(DEFAULT_CONTEXT.cordinates)
   const setLocation = (currentLocation: cordinates) => setCordinates(currentLocation)
   const [weather, setWeather] = useState(DEFAULT_CONTEXT.weather)
-
+  const [isLoading, setIsLoading] = useState(DEFAULT_CONTEXT.isLoading)
+  const setLoading = (loading: boolean) => setIsLoading(loading)
   useEffect(() => {
     async function postInit() {
       let currentLocation = await GetLocation();
@@ -71,7 +76,9 @@ const WeatherAppProvider: React.FC = ({children}) => {
     <WeatherContext.Provider value={{
       cordinates,
       setLocation,
-      weather
+      weather,
+      isLoading,
+      setLoading,
     }}>
       {children}
     </WeatherContext.Provider>

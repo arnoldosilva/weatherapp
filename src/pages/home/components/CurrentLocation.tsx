@@ -17,7 +17,7 @@ const Container = styled.View`
 const LocationText = styled.Text`
   margin-left: 5px;
   padding-top: 5px;
-  font-size: 20px;
+  font-size: 30px;
   font-family: ${Font.regular};
   text-align: center;
 `;
@@ -27,7 +27,7 @@ export default function CurrentLocation(props: iCurrentLocationProps) {
 
   return (
     <Container testID='CurrentLocation'>
-      <Icon name='location-pin' size={30} color='black' />
+      <Icon name='location-pin' size={50} color='black' />
       <LocationText>{props.currentLocation}</LocationText>
     </Container>
   )

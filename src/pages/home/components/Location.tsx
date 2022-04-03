@@ -17,6 +17,7 @@ const Container = styled.View<iDimensionProps>`
   position: absolute;
   right: ${props => ((props.width - 50) / 2) * -1}px;
   transform: rotate(-90deg);
+  top: 50px;
 `
 
 const LocationText = styled.Text`
