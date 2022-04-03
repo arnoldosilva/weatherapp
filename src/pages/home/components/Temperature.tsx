@@ -6,13 +6,17 @@ interface iTemperatureProps {
   temperature: string;
 }
 
-const Container = styled.View`
+interface iContainerProps {
+  width: number;
+}
+
+const Container = styled.View<iContainerProps>`
   justify-content: center;
   margin-left: 30px;
   margin-top: 50px;  
   height: 100px;
   border-radius: 10px;
-  width: 60%; 
+  width: ${props => props.width * 14}%; 
   flex-direction: row;
   background-color: rgba(255, 255, 255, 0.1);
 `
@@ -32,8 +36,10 @@ const Formater = styled.Text`
 
 
 export default function Temperature(props: iTemperatureProps) {
+  console.log(props.temperature.length)
+
   return (
-    <Container testID='Temperature'>
+    <Container testID='Temperature' width={props.temperature.length}>
       <TemperatureText>{props.temperature}</TemperatureText>
       <Formater>°C</Formater>
     </Container>

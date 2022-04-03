@@ -10,12 +10,12 @@ export type WeatherContextType = {
   setLocation: (currentLocation: cordinates) => void;
   weather: WeatherType;
   isLoading: boolean;
-  setLoading: (loading: boolean) => void;
+  updatePositionAndWeather: () => void;
 }
 
 const DEFAULT_CONTEXT: WeatherContextType = {
+  updatePositionAndWeather: () => {},
   isLoading: true,
-  setLoading: () => {},
   cordinates: {
     latitude: 0,
     longitude: 0
@@ -45,31 +45,46 @@ export const WeatherContext = React.createContext<WeatherContextType>(DEFAULT_CO
 
 
 const WeatherAppProvider: React.FC = ({children}) => {
+
   const [cordinates, setCordinates] = useState(DEFAULT_CONTEXT.cordinates)
   const setLocation = (currentLocation: cordinates) => setCordinates(currentLocation)
   const [weather, setWeather] = useState(DEFAULT_CONTEXT.weather)
   const [isLoading, setIsLoading] = useState(DEFAULT_CONTEXT.isLoading)
-  const setLoading = (loading: boolean) => setIsLoading(loading)
+
+  const updatePositionAndWeather = async () => {
+
+    await getPositionAndWeather();
+  }
+
   useEffect(() => {
-    async function postInit() {
-      let currentLocation = await GetLocation();
 
-      if (currentLocation.errorMsg) {
-        Alert.alert('Error to get current location', currentLocation.errorMsg)
-      } else {
-        setLocation(currentLocation.cordinates)
-
-        const latitude = currentLocation.cordinates.latitude
-        const longitude = currentLocation.cordinates.longitude
-
-        const weatherLocation = await WeatherService.getWeather(latitude, longitude)
-        setWeather(weatherLocation)
-      }
-
-    }
-    postInit();
+    getPositionAndWeather();
 
   }, []);
+
+  async function getPositionAndWeather() {
+    setIsLoading(true);
+
+    let currentLocation = await GetLocation();
+
+    if (currentLocation.errorMsg) {
+      Alert.alert('Huston, temos um problema', currentLocation.errorMsg)
+    } else {
+      setLocation(currentLocation.cordinates)
+
+      const latitude = currentLocation.cordinates.latitude
+      const longitude = currentLocation.cordinates.longitude
+
+      const currentWeather = await WeatherService.getWeather(latitude, longitude)
+      if (currentWeather) {
+        setWeather(currentWeather)
+      } else {
+        Alert.alert('Huston, temos um problema')
+      }
+      setIsLoading(false)
+    }
+
+  }
 
 
   return (
@@ -78,7 +93,7 @@ const WeatherAppProvider: React.FC = ({children}) => {
       setLocation,
       weather,
       isLoading,
-      setLoading,
+      updatePositionAndWeather
     }}>
       {children}
     </WeatherContext.Provider>

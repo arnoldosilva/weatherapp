@@ -3,7 +3,7 @@ import {render} from '@testing-library/react-native'
 import Temperature from './Temperature';
 
 const mokedData = jest.fn()
-const temperature = '23'
+const temperature = '23.9'
 const props = mokedData.bind({
   temperature
 })

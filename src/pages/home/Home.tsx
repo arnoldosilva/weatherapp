@@ -12,7 +12,7 @@ type Props = {}
 
 const Home = (props: Props) => {
   const {weather} = useContext(WeatherContext)
-  console.log(weather)
+
   return (
     <Container testID='Home'>
       <BgImage source={require('../../assets/cloudyday.jpg')}>

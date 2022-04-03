@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components/native'
 import {Font} from '../../../types/fonts'
 import {Dimensions} from 'react-native'
-const height = Dimensions.get('window').height
+import {WeatherContext} from '../../../context/WeatherContext'
 
+const height = Dimensions.get('window').height
 interface iStatusLocationProps {
   height: number
 }
@@ -19,25 +20,29 @@ const StatusLocationContainer = styled.View<iStatusLocationProps>`
   top: ${props => props.height - 200}px;
   align-self: center;
 `;
+const StyledButtom = styled.TouchableOpacity`
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+const StyledText = styled.Text`
+  font-size: 20px;
+  font-family: ${Font.medium};
+  color: #000;
+`;
 
-// const StyledTitle = styled.Text`
-//   font-size: 20px;
-//   font-weight: 500;
-//   color: #b8bece;
-//   font-family: ${Font.medium};
-// `;
 
-// const StyledName = styled.Text`
-// 	font-size: 20px;
-// 	color: #FECC00;
-// 	font-weight: bold;
-//   font-family: ${Font.bold};
-// `;
 
 export default function StatusLocationBar() {
+  const {updatePositionAndWeather} = useContext(WeatherContext)
   return (
     <StatusLocationContainer testID='StatusLocationBar' height={height}>
-
+      <StyledButtom testID='RefreshPositionButtom' onPress={() => updatePositionAndWeather()}>
+        <StyledText>Atualizar</StyledText>
+      </StyledButtom>
     </StatusLocationContainer>
   )
 };
