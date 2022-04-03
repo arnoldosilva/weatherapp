@@ -3,7 +3,7 @@
 Este é um projeto teste para a Builders, com o objetivo de mostrar alguns conhecimentos em React Native.
 
 ![tela2](readmefiles/loading.gif)
-![tela1](readmefiles/tela1.gif)
+![tela1](readmefiles/tela1.png)
 
 <!-- <img src="readmefiles/loading.png" width="360"> -->
 
