@@ -1,4 +1,4 @@
-import {useContext} from 'react'
+import {useContext, useEffect} from 'react'
 import {SafeAreaView} from 'react-native'
 import {StatusBar} from 'expo-status-bar';
 import Home from '../pages/home/Home';
@@ -12,7 +12,8 @@ const Route = (props: Props) => {
 
   const {isLoading} = useContext(WeatherContext)
 
-  if (loadResourcesAndData() && !isLoading) {
+
+  if (!isLoading) {
     return (
       <SafeAreaView >
         <Home />

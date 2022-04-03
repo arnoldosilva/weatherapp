@@ -1,27 +1,25 @@
-import {useEffect, useState} from 'react'
 import * as Font from 'expo-font'
+import {exp} from 'react-native-reanimated';
 
-export default function loadResourcesAndData(): boolean {
-  const [isloadingComplete, setIsloadingComplete] = useState(false);
+class loadResourcesAndData {
 
-  useEffect(() => {
-    async function loadResourcesAndDataAsynchronously() {
-      try {
-        await Font.loadAsync({
-          'poppins-black': require('../../assets/fonts/Poppins-Black.ttf'),
-          'poppins-bold': require('../../assets/fonts/Poppins-Bold.ttf'),
-          'poppins-medium': require('../../assets/fonts/Poppins-Medium.ttf'),
-          'poppins-regular': require('../../assets/fonts/Poppins-Regular.ttf'),
-        });
-        setIsloadingComplete(true);
-      } catch (error) {
-        console.warn(error);
-        setIsloadingComplete(false);
-      }
-
+  static async execute() {
+    let isLoading = false
+    try {
+      await Font.loadAsync({
+        'poppins-black': require('../../assets/fonts/Poppins-Black.ttf'),
+        'poppins-bold': require('../../assets/fonts/Poppins-Bold.ttf'),
+        'poppins-medium': require('../../assets/fonts/Poppins-Medium.ttf'),
+        'poppins-regular': require('../../assets/fonts/Poppins-Regular.ttf'),
+      });
+      isLoading = true
+    } catch (error) {
+      console.warn(error);
+      isLoading = false
     }
+    return isLoading
+  }
 
-    loadResourcesAndDataAsynchronously();
-  }, [])
-  return isloadingComplete;
 }
+
+export default loadResourcesAndData

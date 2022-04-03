@@ -36,7 +36,6 @@ const Formater = styled.Text`
 
 
 export default function Temperature(props: iTemperatureProps) {
-  console.log(props.temperature.length)
 
   return (
     <Container testID='Temperature' width={props.temperature.length}>

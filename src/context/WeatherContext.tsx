@@ -4,6 +4,7 @@ import GetLocation from '../services/LocationService';
 import {Alert} from 'react-native';
 import WeatherService from '../services/WeatherService'
 import {WeatherType} from '../types/weather';
+import loadResourcesAndData from '../hooks/LoadResources';
 
 export type WeatherContextType = {
   cordinates: cordinates;
@@ -58,9 +59,22 @@ const WeatherAppProvider: React.FC = ({children}) => {
 
   useEffect(() => {
 
-    getPositionAndWeather();
+    Promise.all([
+      LoadResources()]).then(() => getPositionAndWeather())
+      .catch(err => Alert.alert('Huston temos um problema'))
 
   }, []);
+
+  async function LoadResources() {
+
+    setIsLoading(true);
+
+    await loadResourcesAndData.execute();
+
+    setIsLoading(false);
+  }
+
+
 
   async function getPositionAndWeather() {
     setIsLoading(true);

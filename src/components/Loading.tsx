@@ -9,7 +9,7 @@ import ShapeC from './ShapeC'
 
 export default function Loading() {
   return (
-    <MotiView style={styles.container}>
+    <MotiView style={styles.container} testID="loading">
       {ShapeA(300, 300, styles.shape1)}
       {ShapeA(500, 500, styles.shape3)}
       {ShapeB(200, 200, styles.shape2)}
