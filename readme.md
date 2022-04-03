@@ -31,6 +31,49 @@ Feito em React Native utilizando alguns pacotes e arquiteturas como:
 - Stylized Components
 - Jest + React Test Library
 
+## Começando
+
+Nesse projeto adicionei as apis para acesso ao openweather e reverse geolocalization mas pretendo invalida-las tão logo a análise, para interessados em estudar a arquiterura do projeto, um arquivo .env será adicionado.
+
+### Pré Requisitos
+
+Este projeto precisa do node instalado, preferência ˆ14.
+
+- yarn
+
+  ```sh
+  yarn install
+  ```
+
+### Instalação
+
+Basta executar os seguintes passos:
+
+<!-- 1. Get a free API Key at [https://example.com](https://example.com) -->
+1. Clone o repositório
+
+   ```sh
+   git clone https://github.com/arnoldosilva/weatherapp.git
+   ```
+
+2. Install NPM packages
+
+   ```sh
+   yarn install
+   ```
+
+3. Executar
+
+   ```sh
+   yarn ios ou yarn android
+   ```
+
+<!-- 4. Enter your API in `config.js`
+
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ``` -->
+
 ## Suporte
 
 Ajude este Desenvolvedor a continuar seu sonho em desenvolvimento mobile! Contrate-me!
