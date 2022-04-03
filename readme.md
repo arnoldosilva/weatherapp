@@ -2,8 +2,10 @@
 
 Este é um projeto teste para a Builders, com o objetivo de mostrar alguns conhecimentos em React Native.
 
-![tela1](readmefiles/tela1.png|width=350)
-![tela2](readmefiles/loading.gif|width=350)
+<img src="readmefiles/tela1.png" width="360">
+<img src="readmefiles/loading.png" width="360">
+
+<!-- ![tela2](readmefiles/loading.gif|width=350) -->
 
 ## Possui interesse em desenvolver algum aplicativo mobile?
 
@@ -42,18 +44,18 @@ Distribuído sob [MIT](https://github.com/arnoldosilva/vai_chover_hoje/blob/mast
 
 <p align="center">
 <a href="https://arnoldosilva.com.br">
-<img src="img/www.png" width="60">
+<img src="readmefiles/www.png" width="60">
 </a>
 <a href="https://www.linkedin.com/in/arnoldosilva/">
-<img src="img/linkedin.png" width="60">
+<img src="readmefiles/linkedin.png" width="60">
 </a>
 <a href="https://dribbble.com/arnoldosilva">
-<img src="img/dribble.png" width="60">
+<img src="readmefiles/dribble.png" width="60">
 </a>
 <a href="https://wa.me/5585998714767">
-<img src="img/whatsapp.png" width="60">
+<img src="readmefiles/whatsapp.png" width="60">
 </a>
 <a href="mailto:contato@arnoldosilva.com.br">
-<img src="img/email.png" width="60">
+<img src="readmefiles/email.png" width="60">
 </a>
 </p>****
