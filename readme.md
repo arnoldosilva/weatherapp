@@ -9,7 +9,7 @@ Este é um projeto teste para a Builders, com o objetivo de mostrar alguns conhe
 
 ## Possui interesse em desenvolver algum aplicativo mobile?
 
-Deseja levar este App para sua academia?
+Contrate-me ;)
 
 Arnoldo Silva</b> - [www.arnoldosilva.com.br](https://www.arnoldosilva.com.br)
 
@@ -25,10 +25,11 @@ Este App utiliza os seguintes pacotes/tecnologias ou assets de uso livre:
 ## Sobre o projeto
 
 Feito em React Native utilizando alguns pacotes e arquiteturas como:
--ContextApi
--Moti
--Stylized Components
--Jest + React Test Library
+
+- ContextApi
+- Moti
+- Stylized Components
+- Jest + React Test Library
 
 ## Suporte
 
