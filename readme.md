@@ -2,8 +2,8 @@
 
 Este é um projeto teste para a Builders, com o objetivo de mostrar alguns conhecimentos em React Native.
 
-![tela1](readmefiles/tela1.png)
-![tela2](readmefiles/loading.gif)
+![tela1](readmefiles/tela1.png|width=350)
+![tela2](readmefiles/loading.gif|width=350)
 
 ## Possui interesse em desenvolver algum aplicativo mobile?
 
