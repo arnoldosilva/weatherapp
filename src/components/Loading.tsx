@@ -8,15 +8,18 @@ function Shape() {
     <MotiView
       from={{
         translateY: -100,
+        rotate: -45,
       }}
       animate={{
         translateY: 0,
+        rotate: 0,
       }}
       transition={{
         loop: true,
         type: 'timing',
         duration: 1500,
         delay: 100,
+
       }}
       style={styles.shape}
       children={<Image source={require('../../assets/icon.png')} style={styles.icon} />
