@@ -67,14 +67,8 @@ const WeatherAppProvider: React.FC = ({children}) => {
 
   async function LoadResources() {
 
-    setIsLoading(true);
-
     await loadResourcesAndData.execute();
-
-    setIsLoading(false);
   }
-
-
 
   async function getPositionAndWeather() {
     setIsLoading(true);
