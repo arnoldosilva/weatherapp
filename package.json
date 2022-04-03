@@ -16,6 +16,7 @@
     "expo-font": "^10.0.5",
     "expo-location": "~14.0.1",
     "expo-status-bar": "~1.2.0",
+    "expo-updates": "~0.11.6",
     "hermes-engine": "v0.7",
     "moti": "^0.17.1",
     "react": "17.0.1",

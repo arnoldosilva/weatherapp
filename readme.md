@@ -81,6 +81,16 @@ Os testes podem ser executados com o comando:
   yarn test
   ```
 
+### Expo Go
+
+Você pode olhar o projeto no seu celular através do EXPO GO com o QR code abaixo ou pelo link
+
+![tela2](readmefiles/expo-go.png)
+
+```sh
+exp://exp.host/@arnoldosilva/weatherapp?release-channel=default
+```
+
 ## Suporte
 
 Ajude este Desenvolvedor a continuar seu sonho em desenvolvimento mobile! Contrate-me!
